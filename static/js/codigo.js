@@ -27,7 +27,7 @@ var Datos=palabras(letras);
 				.append("label");
 				labels.append("input").attr("type","checkbox").attr("value",hits.texto).attr("id","ck"+contando)
 				labels.append("span").text(hits.texto);
-			contando++;
+			  contando++;
 		}else
 		if(hits.tipo=="puntuacion"){
 			d3.select("body").select(".row")

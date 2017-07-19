@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--
+      EXPLICACION DEL CODIGO
+      Este HTML esta ligado a el documento codigo.js, que tiene como proposito tomar la cadena de un parrafo(en dicho codigo puede ser cambiada la funcionalidad para obtener la cadena desde cualquier medio), al tener la cadena de texto (un string) la analiza y crea en un json con formato, la lista de palabras, clasificandolas al mismo tiempo en diferentes tipos de palabra(palabras, puntuacion o link), despues las introduce en un div tipo row y hace los botones y hace el formateo de texto para que se vea con estilo (el parrafo no debe contener saltos de linea... el programa crashea en ese caso)
+    -->
+
+
+
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"  media="screen,projection"/>
+      <!--Import estilo.css-->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body >
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+      <!--importando el codigo a usar en duke-->
+      <script type="text/javascript" src="{{ url_for('static', filename='js/codigo.js') }}"></script>
+      <!--cargar D3-->
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <!--FIN DE LA CARGA DE LIBRERIAS-->
+
+
+      <!--INICIO DE LA PAGINA-->
+      <p id="textoACortar">The landscape of Ancient Egypt is as varied as it is mysterious. Which area are you most excited to explore?</p>
+      <!--<button onclick='cortar()'>cortar</button>-->
+      <form class="row" method="POST" action="localhost:5000">
+      <!--aqui entra el codigo transformado-->
+      <input type="submit" value="Submit"/>
+      <br>
+    </form>
+    </body>
+  </html>
