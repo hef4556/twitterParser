@@ -1,0 +1,39 @@
+div label input {
+   margin-right:100px;
+}
+body {
+    font-family:sans-serif;
+}
+
+#ck-button {
+    background-color:#fff;
+    overflow:auto;
+    display:inline-block;
+    font-family:sans-serif;
+    color:#eee;
+}
+
+#ck-button label {
+    color:#000;
+    font-family: sans-serif;
+    font-size: 1em;
+    text-align:bottom;
+    margin-right: .2em;
+}
+
+#ck-button label span {
+    text-align:bottom;
+    display:block;
+}
+
+#ck-button label input {
+    position:absolute;
+    top:0px;
+}
+
+#ck-button input:checked + span {
+    background-color:#008296;
+    color:#fff;
+    border-radius: 5px;
+    padding: 2px 4px;
+}
