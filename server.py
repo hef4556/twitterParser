@@ -1,18 +1,19 @@
 from flask import Flask, render_template, request, json
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main():
-    return render_template('index.html')
+    return render_template('datos.html')
 
 @app.route("/myPost", methods=['GET', 'POST'])
-def mypst():
+def myPost():
     arrayablesafe = request.form.getlist('ckboxes')
-    return render_template('myPost.html', valor=arrayablesafe[0])
-
-@app.route("/datos", methods=['GET', 'POST'])
-def datos():
-    return render_template('datos.html')
+    valor=''
+    y=0
+    for x in range(len(arrayablesafe)):
+        y=y+1
+        valor=valor + str(y) + ' ' + arrayablesafe[x] + ', '
+    return render_template('myPost.html', valor=valor)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='80')
