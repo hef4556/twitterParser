@@ -25,7 +25,7 @@ var Datos=palabras(letras);
 				.select(".row")
 				.append("div").attr("id","ck-button")
 				.append("label");
-				labels.append("input").attr("type","checkbox").attr("value",hits.texto).attr("id","ck"+contando)
+				labels.append("input").attr("type","checkbox").attr("value",hits.texto).attr("name","ckboxes")
 				labels.append("span").text(hits.texto);
 			  contando++;
 		}else
